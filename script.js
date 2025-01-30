@@ -24,7 +24,7 @@ function addTask() {
         saveTasks();
     };
 
-    // Add delete button
+    
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "❌";
     deleteBtn.style.background = "red";
