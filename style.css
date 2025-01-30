@@ -1,0 +1,100 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+/* Navigation Bar */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    display: block;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    margin: 50px 0;
+    font-size: 20px;
+}
+
+/* To-Do List */
+.todo-container {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    margin: auto;
+}
+input {
+    padding: 10px;
+    width: 80%;
+    border: 2px solid #2a5298;
+    border-radius: 5px;
+}
+button {
+    background: #2a5298;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background: #1e3c72;
+}
+
+/* Task List */
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    background: #f4f4f4;
+    color: black;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+}

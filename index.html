@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Master - To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Task Master Logo">
+                <h1>Task Master</h1>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Stay Focused, Stay Motivated!</h2>
+        <p>Organize your tasks and achieve your goals 🚀</p>
+    </section>
+
+    <main>
+        <div class="todo-container">
+            <h3>Your To-Do List</h3>
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <button onclick="addTask()">Add Task</button>
+            <ul id="taskList"></ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Task Master | Stay Productive!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
