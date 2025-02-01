@@ -1,7 +1,6 @@
-/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     color: white;
     text-align: center;
     margin: 0;
@@ -9,7 +8,7 @@ body {
 
 /* Navigation Bar */
 header {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     padding: 10px;
 }
 nav {
@@ -27,7 +26,6 @@ nav {
     width: 50px;
     height: auto;
     margin-right: 10px;
-    display: block;
 }
 nav ul {
     list-style: none;
@@ -37,40 +35,53 @@ nav ul {
 nav ul li a {
     color: white;
     text-decoration: none;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    color: #ff4081;
 }
 
 /* Hero Section */
 .hero {
     margin: 50px 0;
     font-size: 20px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 /* To-Do List */
 .todo-container {
-    background: white;
-    color: black;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    max-width: 450px;
     margin: auto;
+    backdrop-filter: blur(10px);
 }
-input {
+input, select {
     padding: 10px;
     width: 80%;
-    border: 2px solid #2a5298;
+    margin: 5px;
+    border: 2px solid #ff4081;
     border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
 }
 button {
-    background: #2a5298;
+    background: #ff4081;
     color: white;
     padding: 10px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    transition: 0.3s;
 }
 button:hover {
-    background: #1e3c72;
+    background: #ff105f;
 }
 
 /* Task List */
@@ -79,13 +90,14 @@ ul {
     padding: 0;
 }
 li {
-    background: #f4f4f4;
-    color: black;
+    background: #1f1b2d;
+    color: white;
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 li.completed {
     text-decoration: line-through;
@@ -96,5 +108,11 @@ li.completed {
 footer {
     margin-top: 50px;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }

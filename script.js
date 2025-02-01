@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function addTask() {
     let taskInput = document.getElementById("taskInput");
+    let taskCategory = document.getElementById("taskCategory").value;
+    let taskPriority = document.getElementById("taskPriority").value;
+    let taskDate = document.getElementById("taskDate").value;
     let taskList = document.getElementById("taskList");
 
     if (taskInput.value.trim() === "") {
@@ -12,9 +15,8 @@ function addTask() {
     }
 
     let li = document.createElement("li");
-    li.textContent = taskInput.value;
+    li.innerHTML = `<strong>${taskInput.value}</strong> - ${taskCategory} | ${taskPriority} | Due: ${taskDate}`;
 
-    // Add complete button
     let completeBtn = document.createElement("button");
     completeBtn.textContent = "✔";
     completeBtn.style.background = "green";
@@ -24,7 +26,6 @@ function addTask() {
         saveTasks();
     };
 
-    // Add delete button
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "❌";
     deleteBtn.style.background = "red";
@@ -45,10 +46,7 @@ function addTask() {
 function saveTasks() {
     let tasks = [];
     document.querySelectorAll("#taskList li").forEach(task => {
-        tasks.push({
-            text: task.textContent.replace("✔❌", "").trim(),
-            completed: task.classList.contains("completed")
-        });
+        tasks.push({ text: task.innerText, completed: task.classList.contains("completed") });
     });
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
@@ -59,32 +57,8 @@ function loadTasks() {
 
     tasks.forEach(taskData => {
         let li = document.createElement("li");
-        li.textContent = taskData.text;
-
-        if (taskData.completed) {
-            li.classList.add("completed");
-        }
-
-        let completeBtn = document.createElement("button");
-        completeBtn.textContent = "✔";
-        completeBtn.style.background = "green";
-        completeBtn.style.color = "white";
-        completeBtn.onclick = function() {
-            li.classList.toggle("completed");
-            saveTasks();
-        };
-
-        let deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "❌";
-        deleteBtn.style.background = "red";
-        deleteBtn.style.color = "white";
-        deleteBtn.onclick = function() {
-            li.remove();
-            saveTasks();
-        };
-
-        li.appendChild(completeBtn);
-        li.appendChild(deleteBtn);
+        li.innerHTML = taskData.text;
+        if (taskData.completed) li.classList.add("completed");
         taskList.appendChild(li);
     });
 }
