@@ -15,6 +15,7 @@ function addTask() {
         alert("Please enter a task!");
         return;
     }
+    
 
     let li = document.createElement("li");
     li.innerHTML = `<strong>${taskInput.value}</strong> - ${taskCategory} | ${taskPriority} | Due: ${taskDate}`;
