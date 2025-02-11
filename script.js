@@ -27,6 +27,7 @@ function addTask() {
     completeBtn.onclick = function() {
         li.classList.toggle("completed");
         saveTasks();
+        
     };
 
     let deleteBtn = document.createElement("button");
