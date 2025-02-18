@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     loadTasks();
-    
 });
 
 function addTask() {
-    
     let taskInput = document.getElementById("taskInput");
     let taskCategory = document.getElementById("taskCategory").value;
     let taskPriority = document.getElementById("taskPriority").value;
@@ -15,25 +13,21 @@ function addTask() {
         alert("Please enter a task!");
         return;
     }
-    
 
     let li = document.createElement("li");
     li.innerHTML = `<strong>${taskInput.value}</strong> - ${taskCategory} | ${taskPriority} | Due: ${taskDate}`;
 
     let completeBtn = document.createElement("button");
     completeBtn.textContent = "✔";
-    completeBtn.style.background = "green";
-    completeBtn.style.color = "white";
+    completeBtn.classList.add("complete-btn");
     completeBtn.onclick = function() {
         li.classList.toggle("completed");
         saveTasks();
-        
     };
 
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "❌";
-    deleteBtn.style.background = "red";
-    deleteBtn.style.color = "white";
+    deleteBtn.classList.add("delete-btn");
     deleteBtn.onclick = function() {
         li.remove();
         saveTasks();
