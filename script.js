@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function addTask() {
+    
     let taskInput = document.getElementById("taskInput");
     let taskCategory = document.getElementById("taskCategory").value;
     let taskPriority = document.getElementById("taskPriority").value;
