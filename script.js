@@ -7,6 +7,7 @@ function addTask() {
     
     let taskInput = document.getElementById("taskInput");
     let taskCategory = document.getElementById("taskCategory").value;
+    
     let taskPriority = document.getElementById("taskPriority").value;
     let taskDate = document.getElementById("taskDate").value;
     let taskList = document.getElementById("taskList");
